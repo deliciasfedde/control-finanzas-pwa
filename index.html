@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Control Finanzas</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f50782">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe
+    src="https://script.google.com/macros/s/AKfycbxBNeot8mKAILy8UsAIj-HSQz-p3CYPkyZkHs6p-LvnPBujFGqtgh9wetrt8UFZgcwMIA/exec"
+    allow="camera; microphone"
+  ></iframe>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log('✅ Service Worker registrado'))
+        .catch(err => console.error('❌ Error SW:', err));
+    }
+  </script>
+
+</body>
+</html>
